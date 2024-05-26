@@ -16,24 +16,39 @@
 Минимум 5 тестови се потребни за критериумот EveryBranch
 Најпрво да ги покриеме сите Exceptions 
 
-Test case 1:  allItems == null, payment = X (не е битно колку е payment)
+Test case 1:  
+	allItems == null, payment = X (не е битно колку е payment)
+ 
 	за throw new RuntimeException("allItems list can't be null!"); 
 
-Test case 2: allItems = [new Item("cheese" , "180s" , X , X)], payment = X
+Test case 2: 
+
+	allItems = [new Item("cheese" , "180s" , X , X)], payment = X
+ 
 	за throw new RuntimeException("Invalid character in item barcode!");
 	не е битно за цена, попуст и payment, бидејќи фрла RuntimeException за баркодот 
 
-Test case 3: allItems = [new Item("cheese" , null , X , X)], payment = X
+Test case 3: 
+	
+ 	allItems = [new Item("cheese" , null , X , X)], payment = X
+  
 	за throw new RuntimeException("No barcode!");
 
-Test case 4: Во листата allItems се: item1 =  ["null" , "0612" , 350 , 0.2] и item2 =  ["cheese" , "0804" , 400 , 0.3], payment = 1000
+Test case 4: Во листата allItems се: 
+
+	item1 =  ["null" , "0612" , 350 , 0.2] и item2 =  ["cheese" , "0804" , 400 , 0.3], payment = 1000
+ 
 	Имаме item којшто има име null. Сите елементи во листата ќе бидат со попуст, нивните цени се поголеми од 300, во баркодот првиот број е 0.
 	На крај sum < payment.
 	Програмата ќе врати true.
 
-Test case 5: Во листата allItems се: item1 =  ["ham" , "1312" , 350 , 0] и item2 =  ["cheese", "1804", 400 , 0], payment = 100
+Test case 5: Во листата allItems се: 
+	
+	item1 =  ["ham" , "1312" , 350 , 0] и item2 =  ["cheese", "1804", 400 , 0], payment = 100
+ 
 	Сите елементи во листата нема да имаат попуст, при што на крај sum > payment.
 	Програмата ќе врати false.
+
 
 ### Тест случаи според критериумот Multiple Condition
 За условот:
