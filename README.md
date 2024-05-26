@@ -52,28 +52,34 @@ T && T && T 	e true
 Следствено ни се потребни 4 Test cases:
 
 Test case 1: 
-item =  ["cheese" , "1804" , 200 , 0.3], payment = 10
+	
+	item =  ["cheese" , "1804" , 200 , 0.3], payment = 10
+ 
 Условот со овој Test case нема да биде исполнет, бидејки а (item.getPrice() > 300) е false. односно 200<300;
 (F && X && X e false);
 
 Test case 2:
-item =  ["cheese" , "1804" , 400 , 0], payment = 10
+
+	item =  ["cheese" , "1804" , 400 , 0], payment = 10
+ 
 Условот со овој Test case нема да биде исполнет, бидејки b (item.getDiscount() > 0) e false, односно прозиводот нема попуст, и покрај тоа што item.getPrice() > 300;
 (T && F && X е false);
 
 Test case 3: 
-item =  ["cheese", "1804" , 400 , 0.3], payment = 10
+
+	item =  ["cheese", "1804" , 400 , 0.3], payment = 10
+ 
 Условот со овој Test case нема да биде исполнет, бидејки c (tem.getBarcode().charAt(0)== '0') e false, односно баркодот не започнува на 0;
 (T && T && F e false);
 
 Test case 4:
-item =  ["cheese" , "0804" , 400 , 0.3], payment = 1000
+
+	item =  ["cheese" , "0804" , 400 , 0.3], payment = 1000
+ 
 Условот со овој Test case ќе да биде исполнет. Сите a, b и c се исполнети односно цената е поголема од 300, има попуст и баркодот започнува на 0;
 (T && T && T e true).
 
 ### Објаснување на напишаните unit tests
 Во директориумот src/java/test се наоѓа класата каде што ги напишав unit тестовите. Ги искористив гореспоменатите примери при што во посебни функции се наоѓаат посебните критериуми истите со соодветната ознака: @Test. 
-
 	За Every Branch кога програмата очекуваме да фрли Exception, го користам соодветниот assert израз: assertThrows, при што дополнително го тестирам и дали се фрли соодветниот Exception преку пораката која што се фрла (аssertTrue). Потоа имаме уште 2 можни outputs од програмата еднаш кога ќе врати true (кое го тестирам со assertTrue) и еднаш кога ќе врати false (кое го тестирам со assertFalse).
- 
  	За Multiple Condition, во 3 случаеви условот не е исполнет (assertFalse), а само во еден е исполнет (assertTrue).
